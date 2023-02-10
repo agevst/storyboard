@@ -1,17 +1,17 @@
 
-# README template  
+# Storyboard template  
 
-## Second header  
+## Storyboard template    
 
-### Third header  
+### Storyboard template    
 
-#### Fourth header  
+#### Storyboard template    
 
-A polygon is simply a data.frame with an x and y column, where each row demarcates an anchor point for the polygon. The polygon is not in closed form, that is, the first point is not repeated in the end. If more polygons are wanted you can provide an additional column that indicate the polygon membership of a column (quite like ggplot2::geom_polygon() expects an x, y, and group variable). If holed polygons are needed, holes should follow the main polygon and be separated with an NA row in the x and y column.      
+A polygon is simply a data.frame with an **x** and **y** column, where each row demarcates an anchor point for the polygon. The polygon is not in closed form, that is, the first point is not repeated in the end. If more polygons are wanted you can provide an additional column that indicate the polygon membership of a column (quite like `ggplot2::geom_polygon()` expects an x, y, and group variable). If holed polygons are needed, holes should follow the main polygon and be separated with an NA row in the _x and y column_.        
 
 <!-- image -->
 <div align="center">
-	<img src="img/img_16x9.jpg" width="100%" height="300" >
+	<img src="img/img_16x9.png" width="100%" height="300" >
 </div>
 
 <div align="center">
