@@ -1,0 +1,60 @@
+/* set main container for parallax */
+.main-container {
+    max-width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* set remaining text content container */
+.mycontent{
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 130%;
+      line-height: 1.7;
+      padding-right: 15px;
+      padding-left: 15px;
+}
+
+body{
+/*  background: #FFF8EC;*/
+}
+
+h1, h4{
+   text-align: center;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+a{
+  color: #729E70;
+  background: none; 
+}
+
+a:hover{ 
+  color: #729E70;
+  background: none; 
+}
+
+img{
+/*  border: 2px solid #729E70;*/
+  vertical-align: middle;  
+}
+
+.right-just {
+  text-align: right; 
+  vertical-align: middle;  
+}
+
+.remove-border {
+  border: none;
+}
+
+/* feather icons ---------------- */
+.arrow {
+  width: 100px;
+  height: 100px;
+  color: #729E70;
+}
