@@ -23,6 +23,9 @@ output:
     includes:
       before_body: ~/projects/storyboard/html/header.html
       after_body: ~/projects/storyboard/html/footer.html
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 <!-- quicksand font -->
@@ -53,8 +56,6 @@ output:
 
 </style>
 ```
-
-
 ```{r, set-options, echo = F, cache = T, message=F, warning=F}
 options(width=25,tinytex.verbose = TRUE, width.cutoff=25)
 knitr::opts_chunk$set(
@@ -73,50 +74,48 @@ knitr::opts_chunk$set(
 
 pacman::p_load(dplyr)
 # knitr::read_chunk(here::here("r","make_map.R"))
-source(here::here("r","make_gitignore.R"))
+# source(here::here("r","make_gitignore.R"))
 # source(here::here("r","make_plot_stacked.R"))
 ```
 
-\  
+
 \  
 
 # [`r params$title`]{style="font-size: 200%;"}
 
 \  
-\      
+\  
 
-<center> 
-[`r params$author` | `r params$social` <br>`r params$date`]{style="font-size: 120%; color:`r params$secondary`;"} 
-</center>
+<center>[`r params$author` \| `r params$social`
+<br>`r params$date`]{style="font-size: 120%; color:`r params$secondary`;"}</center>
 
 ------------------------------------------------------------------------
 
-# Intro to NLP  
+# Intro to NLP
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio euismod lacinia at quis risus.   
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
 
-  
-------------------------------------------------------------------------  
+------------------------------------------------------------------------
 
 # `r params$header1`
 
-Toy case study of how Natural Language Processing (NLP) analyses text.  
+Toy case study of how Natural Language Processing (NLP) analyses text.
 
-Showcase of how modern computing and machine learning can now easily analyse millions of words and historical patterns ie. use a simple case study of language processing to introduce NLPs then dive into budget speech analysis     
+Showcase of how modern computing and machine learning can now easily
+analyse millions of words and historical patterns ie. use a simple case
+study of language processing to introduce NLPs then dive into budget
+speech analysis
 
-\   
+\  
 
-<!-- ##### Centered image -->
 
-<!-- ```{=html} -->
-<!-- <div align="center"; text-align:center> -->
-<!--   <img src="img/toy.jpeg" style=width:33%> -->
-<!-- </div> -->
-<!-- ``` -->
-
-\     
-
-#### How NLP text analysis works      
+#### How NLP text analysis works
 
 <!-- row 1 -->
 <div class = "row">
@@ -129,11 +128,18 @@ Showcase of how modern computing and machine learning can now easily analyse mil
   <div class = "col-md-4"> 
   <br>
 
-Step through of how NLP models analyse text using tokenising to parse individual words, verbage, language, and keywords, such as identifying 
-[nouns]{style="color:black;background-color:#CD8574;opacity:1;"}, 
-[pronouns]{style="color:black;background-color:#C6E4B1;opacity:1;"}, 
-[verbs]{style="color:black;background-color:#EDD298;opacity:1;"}, and 
-[keywords]{style="color:black;background-color:#83ABF4;opacity:1;"} (Universal Parts of Speech, UPOS).  
+Step through of how NLP models analyse text using tokenising to parse
+individual words, verbage, language, and keywords, such as identifying
+[nouns]{style="color:black;background-color:#CD8574;opacity:1;"},
+[pronouns]{style="color:black;background-color:#C6E4B1;opacity:1;"},
+[verbs]{style="color:black;background-color:#EDD298;opacity:1;"}, and
+[keywords]{style="color:black;background-color:#83ABF4;opacity:1;"}
+(Universal Parts of Speech, UPOS).
+
+<br>     
+
+
+\    
 
 ```{r, echo = F, message=F,warning=F}
 require(ggplot2)  
@@ -157,131 +163,173 @@ ggplot() +
 
 ```
 
-\  
+
 \  
 
-* Token/tokenising = individual words  
-* UPOS = Universal Parts of Speech (word classification)  
-* Lemma/lemmatising = root word form of each token    
-* Tagging  
-* Dependency Parsing Annotation  
+\  
 
+
+-   Token/tokenising = individual words  
+
+-   UPOS = Universal Parts of Speech (word classification)  
+
+-   Lemma/lemmatising = root word form of each token  
+
+-   Tagging  
+
+-   Dependency Parsing Annotation  
 
   </div>
 </div>
 
-\    
+\  
 
 
 ------------------------------------------------------------------------
 
 # `r params$header2` {.tabset .tabset-fade .tabset-pills}
 
-Select three global and political topics that most interest you      
+Select three global and political topics that most interest you
 
-* Data dive into topics reader chooses (below outputs)  
+-   Data dive into topics reader chooses (below outputs)
 
-## Defence  
-## Climate   
+## Defence
+
+## Climate
+
 ## Housing
-## Immigration 
-## Environment
-## Jobs (unemployment)
-## Tax (breaks or increases)
-## Pension
-## Aged care
-## Transport 
-## Education
-## Trade 
-## Budget - Debt / surplus
-## Technology 
-## Manufacturing
-## Health
-## Hospitals
-## Crime
-## Espionage  
 
-#
+## Immigration
+
+## Environment
+
+## Jobs (unemployment)
+
+## Tax (breaks or increases)
+
+## Pension
+
+## Aged care
+
+## Transport
+
+## Education
+
+## Trade
+
+## Budget - Debt / surplus
+
+## Technology
+
+## Manufacturing
+
+## Health
+
+## Hospitals
+
+## Crime
+
+## Espionage
+
+# 
 
 ------------------------------------------------------------------------
 
 # `r params$header3`
 
-Timeline analysis of the last 123 years of budget speeches using chosen topics  
+Timeline analysis of the last 123 years of budget speeches using chosen
+topics
 
-* Highlight key global events in timeline to show how different parties and Aus politics in general responded to global events eg Greta Thunberg's birth      
-* how language shifts over time and between parties  
-* how parties favour keywords or language surrounding key topics  
-* which parties react to global events/issues   
+-   Highlight key global events in timeline to show how different
+    parties and Aus politics in general responded to global events eg
+    Greta Thunberg's birth\
+-   how language shifts over time and between parties\
+-   how parties favour keywords or language surrounding key topics\
+-   which parties react to global events/issues
 
+![](img/tax_party.png)
 
-![](img/tax_party.png)  
+\  
+
+![](img/2019.png)
 
 \  
 \  
-
-![](img/2019.png)  
-
-
-\   
-\  
-
 
 ------------------------------------------------------------------------
 
 # `r params$header4` {.tabset .tabset-fade .tabset-pills}
 
-Sentiment analysis of tone 
+Sentiment analysis of tone
 
-* Analysis of positive vs negative discourse - how language changes over time, which parties are more -/+ on issues, show how certain topics are systematically linked to negative language eg. illegal immigration, unskilled immigrants, etc.  
-
+-   Analysis of positive vs negative discourse - how language changes
+    over time, which parties are more -/+ on issues, show how certain
+    topics are systematically linked to negative language eg. illegal
+    immigration, unskilled immigrants, etc.
 
 <!-- tab1 -->
 
 <!-- ## [Plots]{style="color:`r params$secondary`;"} # add custom css styling to tabs-->
 
-## Defence  
+## Defence
 
-![](img/defence.png)    
+![](img/defence.png)
 
-![](img/defence_topn.png)    
-
+![](img/defence_topn.png)
 
 ## Tax
-  
-![](img/tax.png)        
+
+![](img/tax.png)
 
 ![](img/tax_topn.png)
 
-
 # 
+
 
 \  
 
-Deep dive example      
+
+Deep dive example
 
 ![](img/tax1.png)
 
-
 # `r params$header5`
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio euismod lacinia at quis risus.   
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
 
-Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel eros donec. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Tempor nec feugiat nisl pretium. Vitae tempus quam pellentesque nec nam aliquam.
+Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et
+pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam
+vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet.
+Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras
+fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel
+eros donec. Scelerisque mauris pellentesque pulvinar pellentesque
+habitant morbi tristique senectus. Tempor nec feugiat nisl pretium.
+Vitae tempus quam pellentesque nec nam aliquam.
 
 
 \  
-\    
 
-------------------------------------------------------------------------    
+\  
+
+------------------------------------------------------------------------
 
 #### Credits
 
-**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN** Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko **PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
-
+**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel
+Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN**
+Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko
+**PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
 
 <!-- ------------------------------------------------------------------------ -->
+
 <!-- ------------------------------------------------------------------------ -->
+
 <!-- ------------------------------------------------------------------------ -->
 
 <!-- LAB -->
@@ -289,6 +337,9 @@ Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et pharetra ph
 <!-- Embed iframes -->
 
 <!-- https://stackoverflow.com/questions/54637384/embed-a-html-found-on-web-in-rmarkdown -->
+
 <!-- <iframe width='1000px' height='1000px' src='https://www.smh.com.au/interactive/modules/big-timeline/index.html?resizable=true&date=&time=June%2026&headline=Greater%20Sydney%20enters%20lockdown&image=&credit=&v=15' > -->
+
 <!--   <p>Your browser does not support iframes</p> -->
+
 <!-- </iframe>   -->
