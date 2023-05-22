@@ -21,24 +21,13 @@ output:
     theme: "cosmo"
     css: css/style.css
     includes:
-      before_body: header.html
-      after_body: footer.html
+      before_body: html/header.html
+      after_body: html/footer.html
 ---
 
 <!-- quicksand font -->
 
 <!-- <link rel="stylesheet"href="//fonts.googleapis.com/css?family=Quicksand:300,400,600,700&amp;lang=en"/> -->
-
-
-https://github.com/agevst/storyboard.git
-
-echo "# storyboard" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/agevst/storyboard.git
-git push -u origin main
 
 <!-- css for tabs -->
 
@@ -103,13 +92,11 @@ source(here::here("r","make_plot_stacked.R"))
 
 # Intro
 
-The tunnel runs 150 metres underground. Inside, Australian mining manager Andrew Head is trudging through mud and muck. He only has a headlight to guide him as the temperature in this dark pit in western Africa hits **45 degrees**.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio euismod lacinia at quis risus.   
 
-> "It's like a scene from Raiders of the Lost Ark."
+Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet. Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel eros donec. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Tempor nec feugiat nisl pretium. Vitae tempus quam pellentesque nec nam aliquam.
 
-The tunnel has gold running through its veins. Head, a rugged 48-year-old, father-of-three from *Sydney's northern suburbs* is searching for gaps in the wall. Separated by 2½ kilometres of rock, rubble and poverty above ground, the mines stand opposite each other. One is an Australian exploration mine run by Cassius Mining Limited. The other is a Chinese state-linked mine run by the Shaanxi Mining Company.
-
-------------------------------------------------------------------------
+------------------------------------------------------------------------  
 
 # `r params$header1`
 
@@ -167,11 +154,11 @@ knitr::include_graphics(c(
   <div class = "col-md-4"> 
   <br>
 
-The tunnel runs 150 metres underground. Inside, Australian mining manager Andrew Head is trudging through mud and muck. He only has a headlight to guide him as the temperature in this dark pit in western Africa hits 45 degrees.  
+Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam vestibulum morbi.  
 
 <br>     
 
-The tunnel has gold running through its veins. Head, a rugged 48-year-old, father-of-three from Sydney's northern suburbs is searching for gaps in the wall.
+Blandit cursus risus at ultrices mi tempus imperdiet. Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel eros donec.   
 
 <br>     
 
@@ -188,7 +175,7 @@ The tunnel has gold running through its veins. Head, a rugged 48-year-old, fathe
   
   <br><br>   
 
-> The tunnel runs 150 metres underground. Inside, Australian mining manager Andrew Head is trudging through mud and muck. He only has a headlight to guide him as the temperature in this dark pit in western Africa hits 45 degrees.  
+> Fermentum iaculis eu non diam phasellus. Diam ut venenatis tellus in metus vulputate. Dui ut ornare lectus sit amet. Sit amet nisl suscipit adipiscing.   
 
 <br>     
 
@@ -325,7 +312,7 @@ print(x.split(' '))
 
 #### Credits
 
-**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN** Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko **PRODUCTION** Matt Malishev, Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
+**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN** Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko **PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
 
 
 <!-- ------------------------------------------------------------------------ -->
