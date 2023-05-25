@@ -1,6 +1,6 @@
 ---
 params:
-  title: "The global fishing chokehold"  
+  title: "Who's eating Australia's fish?"  
   author: "Visual Stories Team"
   social: "The Age"
   date: "1 June 2023"    
@@ -8,9 +8,10 @@ params:
   secondary: "#c3c3c3"
   header1: "Global EEZ and fishing regions"
   header2: "Country level fishprint"
-  header3: "Australia and nations overlapping with EEZs"
-  header4: "Case study of individual vessels"  
-  header5: "Impact of fishing monopoly"
+  header3: "The decline of commercial fish"  
+  header4: "Fish fight: Australia EEZ and competing nations"
+  header5: "Case study of individual vessels"  
+  header6: "Impact of fishing monopoly on stock availability (fish migration)"
   here: "r"
   imgdir: "img"
   img1: "fish1.jpeg"
@@ -131,7 +132,7 @@ euismod lacinia at quis risus.
 
 ![](img/aus.png)
 
-### China
+### Other major nations e.g. China  
 
 ![](img/china.png)
 
@@ -150,6 +151,24 @@ Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
 viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
 euismod lacinia at quis risus.
 
+
+------------------------------------------------------------------------
+
+# `r params$header4`
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
+
+Fishing hours per country over time  
+
+![](img/calendar.png)
+
 ![](img/time1.png) ![](img/time2.png)
 
 \  
@@ -159,7 +178,7 @@ euismod lacinia at quis risus.
 
 ------------------------------------------------------------------------
 
-# `r params$header4` {.tabset .tabset-fade .tabset-pills}
+# `r params$header5` {.tabset .tabset-fade .tabset-pills}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
@@ -176,7 +195,7 @@ Aus focus
 
 ![](img/2020.gif)
 
-# `r params$header5`
+# `r params$header6`
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
