@@ -1,0 +1,228 @@
+---
+params:
+  title: "The global fishing chokehold"  
+  author: "Visual Stories Team"
+  social: "The Age"
+  date: "1 June 2023"    
+  primary: "#729E70"
+  secondary: "#c3c3c3"
+  header1: "Global EEZ and fishing regions"
+  header2: "Country level fishprint"
+  header3: "Australia and nations overlapping with EEZs"
+  header4: "Case study of individual vessels"  
+  header5: "Impact of fishing monopoly"
+  here: "r"
+  imgdir: "img"
+  img1: "fish1.jpeg"
+  github: "https://github.com/agevst"      
+output: 
+  # pdf_document:
+  html_document:
+    theme: "cosmo"
+    css: ~/projects/storyboard/css/style.css
+    includes:
+      before_body: html/header.html
+      after_body: html/footer.html
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+<!-- quicksand font -->
+
+<!-- <link rel="stylesheet"href="//fonts.googleapis.com/css?family=Quicksand:300,400,600,700&amp;lang=en"/> -->
+
+<!-- css for tabs -->
+
+```{=html}
+<style type="text/css">
+
+.nav>li>a{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav-pills>li>a:hover{
+  background: `r params$primary`;
+  color: `r params$secondary`;
+  opacity:0.7;
+}
+
+.nav-pills>li>a:focus, .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  background: `r params$primary`;
+  background-color: `r params$primary`;
+}
+
+</style>
+```
+```{r, set-options, echo = F, cache = T, message=F, warning=F}
+options(width=25,tinytex.verbose = TRUE, width.cutoff=25)
+knitr::opts_chunk$set(
+ eval = F, # run all code
+ echo = F, # show code chunks in output 
+ tidy = T, # make output as tidy
+ message = F,  # mask all messages
+ warning = F, # mask all warnings 
+ size="small", # set code chunk size,
+ tidy.opts=list(width.cutoff=25) # set width of code chunks in output
+)
+# tinytex::install_tinytex()
+# require(tinytex)
+# install.packages("pacman")
+# require(pacman)
+
+pacman::p_load(dplyr)
+# knitr::read_chunk(here::here("r","make_map.R"))
+# source(here::here("r","make_gitignore.R"))
+# source(here::here("r","make_plot_stacked.R"))
+```
+
+
+\  
+
+# [`r params$title`]{style="font-size: 200%;"}
+
+\  
+\  
+
+<center>[`r params$author` \| `r params$social`
+<br>`r params$date`]{style="font-size: 120%; color:`r params$secondary`;"}</center>
+
+------------------------------------------------------------------------
+
+# Intro 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
+
+------------------------------------------------------------------------
+
+# `r params$header1`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.  
+
+\  
+
+### Exclusive Economic Zones (EEZ)  
+
+![](img/eez.png)
+
+
+
+
+------------------------------------------------------------------------
+
+# `r params$header2` 
+
+
+### Australia
+
+![](img/aus.png)
+
+### China
+
+![](img/china.png)
+
+ 
+
+------------------------------------------------------------------------
+
+# `r params$header3`
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
+
+![](img/time1.png) ![](img/time2.png)
+
+\  
+
+
+\  
+
+------------------------------------------------------------------------
+
+# `r params$header4` {.tabset .tabset-fade .tabset-pills}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
+
+![](img/2020.png)
+
+
+Aus focus
+
+![](img/2020.gif)
+
+# `r params$header5`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
+tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
+Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
+viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
+euismod lacinia at quis risus.
+
+Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et
+pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam
+vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet.
+Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras
+fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel
+eros donec. Scelerisque mauris pellentesque pulvinar pellentesque
+habitant morbi tristique senectus. Tempor nec feugiat nisl pretium.
+Vitae tempus quam pellentesque nec nam aliquam.
+
+
+\  
+
+\  
+
+------------------------------------------------------------------------
+
+#### Credits
+
+**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel
+Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN**
+Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko
+**PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- LAB -->
+
+<!-- Embed iframes -->
+
+<!-- https://stackoverflow.com/questions/54637384/embed-a-html-found-on-web-in-rmarkdown -->
+
+<!-- <iframe width='1000px' height='1000px' src='https://www.smh.com.au/interactive/modules/big-timeline/index.html?resizable=true&date=&time=June%2026&headline=Greater%20Sydney%20enters%20lockdown&image=&credit=&v=15' > -->
+
+<!--   <p>Your browser does not support iframes</p> -->
+
+<!-- </iframe>   -->
