@@ -92,15 +92,25 @@ pacman::p_load(dplyr)
 
 ------------------------------------------------------------------------
 
-# Intro 
+# Storyboard    
+  
+- map with permit zones  
+- map with areas within the permit zones that do not allow commercial fishing
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.
+\  
+
+- all fishing (actual fishing) around Australia of all countries in the past 10 years  
+- all fishing (actual fishing) around Australia of all countries in the last full year we have data of (Jan- Dec)   
+- single out the top 5 countries fishing around AUS in that year (country by country)      
+
+\  
+
+- blame map showing all individual ships in the last year fishing (actual fishing) within our permit zones  
+
+\  
+
+- Fish migration patterns of the top 3 commercial fish species  
+- Fish migration patterns of the top 3 endangered commercial fish species    
 
 ------------------------------------------------------------------------
 
@@ -221,12 +231,7 @@ Vitae tempus quam pellentesque nec nam aliquam.
 
 ------------------------------------------------------------------------
 
-#### Credits
 
-**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel
-Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN**
-Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko
-**PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
 
 <!-- ------------------------------------------------------------------------ -->
 
