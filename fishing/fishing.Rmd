@@ -12,7 +12,7 @@ params:
   header4: "Fish fight: Australia EEZ and competing nations"
   header5: "Case study of individual vessels"  
   header6: "Impact of fishing monopoly on stock availability (fish migration)"
-  here: "r"
+  here: "fishing"
   imgdir: "img"
   img1: "fish1.jpeg"
   github: "https://github.com/agevst"      
@@ -109,8 +109,12 @@ pacman::p_load(dplyr)
 
 \  
 
-- Fish migration patterns of the top 3 commercial fish species  
-- Fish migration patterns of the top 3 endangered commercial fish species    
+
+<!-- here is aus eez where fishing from other nations is illegal (world globe)   -->
+<!-- here is the route of fishing vessels X from Japan fishing for tuna, one of the most active nations near Aus   waters. individual vessels fish for many species, such as Z (world globe)   -->
+<!-- here are all of Japan's fishing vessels for one year (world globe)   -->
+<!-- here are all countries that fished near Aus for 2020 (aus spotlight)        -->
+
 
 ------------------------------------------------------------------------
 
@@ -126,110 +130,251 @@ euismod lacinia at quis risus.
 
 \  
 
-### Exclusive Economic Zones (EEZ)  
 
-![](img/eez.png)
+```{r, echo = F, cache = T, fig.width=12, fig.height=12, warning=FALSE, message=FALSE}
+pacman::p_load(here,dplyr,ggplot2,readr,ggthemes,colorspace,sf,rnaturalearth,lubridate,svglite,rgdal,stringr,gganimate,scales,concaveman,patchwork,grid,forcats,rmapshaper,threejs,magick) %>% suppressMessages()
 
+yr <- 2020
 
+# eez
+eez <-  here::here(params$here,"data","world_eez_simplified",paste0("eez_world_",0.005,".shp")) %>% st_read(quiet = T)
+aus_eez_lat <- eez %>% filter(SOVEREIGN1 == "Australia") %>% st_coordinates() %>% .[,"Y"]
+aus_eez_lon <- eez %>% filter(SOVEREIGN1 == "Australia") %>% st_coordinates() %>% .[,"X"]
 
+earth <- here::here(params$here,"img","globe#6086AD1convert_colorise.png")
 
-------------------------------------------------------------------------
+# globe vessel data
+globe_top3_2020 <- readRDS(here::here(params$here,"data","top3_2020.Rda"))
+globe_all_2020 <- readRDS(here::here(params$here,"data","all_countries_2020.Rda"))
+globe_all_aus_eez <- readRDS(here::here(params$here,"data","globe_all_aus_eez.Rda"))
+lupeng_all <- readRDS(here::here(params$here,"data","globe_lupeng_all.Rda"))
 
-# `r params$header2` 
+# plot --------------------------------------------------------------------
 
-
-### Australia
-
-![](img/aus.png)
-
-### Other major nations e.g. China  
-
-![](img/china.png)
-
- 
-
-------------------------------------------------------------------------
-
-# `r params$header3`
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.
+bg <- "#6086AD"  #"#6086AD" # 
+coll <- "#000000"
+colh <- "#CE7024"
+opac <- 1
 
 
-------------------------------------------------------------------------
+# function for loading data and plotting globe 
+plot_globe <- function(mm,colors,cex,fov,rlon,rlat){
+  x <- activity %>%
+    filter(mmsi %in% mm) %>% #  target_mmsi tv_top
+    distinct(cell_ll_lat, cell_ll_lon, .keep_all = T) %>% # get distinct latlon to simplify data
+    rename("lat" = 2, "lon" = 3)
+  val <- x$fishing_hours
+  fov <-fov
+  rlon <- rlon
+  rlat <- rlat
+  # globe
+  globejs(
+    img = earth,
+    lat = x$lat, long = x$lon, val = 1,color = colors, pointsize = cex, atmosphere = T, bg = "#FFFFFF", fov = fov, rotationlong = rlon,rotationlat = rlat # ,height = height,width = height
+  )
+}
 
-# `r params$header4`
+
+```
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.
+# Module 1  
 
-Fishing hours per country over time  
+### All EEZ    
 
-![](img/calendar.png)
-
-![](img/time1.png) ![](img/time2.png)
-
-\  
+![](img/globe1.png)
 
 
 \  
 
-------------------------------------------------------------------------
 
-# `r params$header5` {.tabset .tabset-fade .tabset-pills}
+### Aus EEZ    
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.
-
-![](img/2020.png)
-
-
-Aus focus
-
-![](img/2020.gif)
-
-# `r params$header6`
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.
-
-Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et
-pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam
-vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet.
-Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras
-fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel
-eros donec. Scelerisque mauris pellentesque pulvinar pellentesque
-habitant morbi tristique senectus. Tempor nec feugiat nisl pretium.
-Vitae tempus quam pellentesque nec nam aliquam.
-
+![](img/globe2.png)
 
 \  
 
+
+### Aus global fishing  
+
+![](img/globe3.png)   
+
 \  
 
+### Top nation global fishing e.g. China  
+
+![](img/globe4.png)
+
+\  
+
+----------------------------------------------------------------
+
+## Module 2
+
+### 10 years of fishing around Aus
+
+![](img/globe5.png)   
+
+\  
+
+### Top 3 nations fishing around Aus  
+
+![](img/globe6.png)  
+
+\  
+
+----------------------------------------------------------------
+
+## Module 3  
+
+### All nations within Aus EEZ
+
+![](img/globe7.png)
+
+### Lu Peng case study  (animated full globe)  
+```{r, echo = F, fig.width=12, fig.height=12, warning=FALSE, message=FALSE}
+# module 3 ----------------------------------------------------------------
+
+require(threejs)
+require(sf)
+require(colorspace)
+require(scales)
+require(dplyr)
+require(readr)
+
+
+fov = 30
+rlon = 84.5
+rlat = 0.2
+cn <- lupeng_all %>% nrow
+colors <- c(
+  rep("#33B679", aus_eez_lat %>% length),
+  rep("gold" %>% darken(0.1),cn)
+)
+lat <- c(aus_eez_lat,lupeng_all %>% st_coordinates() %>% .[,"Y"])
+lon <- c(aus_eez_lon,lupeng_all %>% st_coordinates() %>% .[,"X"])
+globejs(
+  img = earth,
+  lat = lat,
+  long = lon, val = 1,color = colors, pointsize = 0.3, atmosphere = T, bg = "#FFFFFF",fov = fov, rotationlong = rlon,rotationlat = rlat # ,height = height,width = height
+)
+
+```
+
+
+
+
 ------------------------------------------------------------------------
+
+
+
+
+<!-- ### Exclusive Economic Zones (EEZ)   -->
+
+<!-- ![](img/eez.png) -->
+
+
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # `r params$header2`  -->
+
+
+<!-- ### Australia -->
+
+<!-- ![](img/aus.png) -->
+
+<!-- ### Other major nations e.g. China   -->
+
+<!-- ![](img/china.png) -->
+
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # `r params$header3` -->
+
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod -->
+<!-- tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi -->
+<!-- tempus imperdiet. Dignissim diam quis enim lobortis scelerisque -->
+<!-- fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. -->
+<!-- Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque -->
+<!-- viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio -->
+<!-- euismod lacinia at quis risus. -->
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # `r params$header4` -->
+
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod -->
+<!-- tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi -->
+<!-- tempus imperdiet. Dignissim diam quis enim lobortis scelerisque -->
+<!-- fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. -->
+<!-- Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque -->
+<!-- viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio -->
+<!-- euismod lacinia at quis risus. -->
+
+<!-- Fishing hours per country over time   -->
+
+<!-- ![](img/calendar.png) -->
+
+<!-- ![](img/time1.png) ![](img/time2.png) -->
+
+<!-- \   -->
+
+
+<!-- \   -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # `r params$header5` {.tabset .tabset-fade .tabset-pills} -->
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod -->
+<!-- tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi -->
+<!-- tempus imperdiet. Dignissim diam quis enim lobortis scelerisque -->
+<!-- fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. -->
+<!-- Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque -->
+<!-- viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio -->
+<!-- euismod lacinia at quis risus. -->
+
+<!-- ![](img/2020.png) -->
+
+
+<!-- Aus focus -->
+
+<!-- ![](img/2020.gif) -->
+
+
+
+<!-- # `r params$header6` -->
+
+<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod -->
+<!-- tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi -->
+<!-- tempus imperdiet. Dignissim diam quis enim lobortis scelerisque -->
+<!-- fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit. -->
+<!-- Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque -->
+<!-- viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio -->
+<!-- euismod lacinia at quis risus. -->
+
+<!-- Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tempus urna et -->
+<!-- pharetra pharetra. Diam quam nulla porttitor massa id neque aliquam -->
+<!-- vestibulum morbi. Blandit cursus risus at ultrices mi tempus imperdiet. -->
+<!-- Mauris ultrices eros in cursus turpis massa tincidunt dui. Cras -->
+<!-- fermentum odio eu feugiat. Vitae tortor condimentum lacinia quis vel -->
+<!-- eros donec. Scelerisque mauris pellentesque pulvinar pellentesque -->
+<!-- habitant morbi tristique senectus. Tempor nec feugiat nisl pretium. -->
+<!-- Vitae tempus quam pellentesque nec nam aliquam. -->
+
+
+<!-- \   -->
+
+<!-- \   -->
+
+<!-- ------------------------------------------------------------------------ -->
 
 
 
