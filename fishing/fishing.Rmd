@@ -144,9 +144,6 @@ aus_eez_lon <- eez %>% filter(SOVEREIGN1 == "Australia") %>% st_coordinates() %>
 earth <- here::here(params$here,"img","globe#6086AD1convert_colorise.png")
 
 # globe vessel data
-globe_top3_2020 <- readRDS(here::here(params$here,"data","top3_2020.Rda"))
-globe_all_2020 <- readRDS(here::here(params$here,"data","all_countries_2020.Rda"))
-globe_all_aus_eez <- readRDS(here::here(params$here,"data","globe_all_aus_eez.Rda"))
 lupeng_all <- readRDS(here::here(params$here,"data","globe_lupeng_all.Rda"))
 
 # plot --------------------------------------------------------------------
