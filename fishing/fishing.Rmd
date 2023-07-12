@@ -93,40 +93,14 @@ pacman::p_load(dplyr)
 ------------------------------------------------------------------------
 
 # Storyboard    
-  
-- map with permit zones  
-- map with areas within the permit zones that do not allow commercial fishing
 
-\  
 
-- all fishing (actual fishing) around Australia of all countries in the past 10 years  
-- all fishing (actual fishing) around Australia of all countries in the last full year we have data of (Jan- Dec)   
-- single out the top 5 countries fishing around AUS in that year (country by country)      
-
-\  
-
-- blame map showing all individual ships in the last year fishing (actual fishing) within our permit zones  
-
-\  
 
 
 <!-- here is aus eez where fishing from other nations is illegal (world globe)   -->
 <!-- here is the route of fishing vessels X from Japan fishing for tuna, one of the most active nations near Aus   waters. individual vessels fish for many species, such as Z (world globe)   -->
 <!-- here are all of Japan's fishing vessels for one year (world globe)   -->
 <!-- here are all countries that fished near Aus for 2020 (aus spotlight)        -->
-
-
-------------------------------------------------------------------------
-
-# `r params$header1`
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Risus at ultrices mi
-tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-fermentum dui faucibus. Tempor nec feugiat nisl pretium fusce id velit.
-Ut lectus arcu bibendum at varius vel pharetra vel. Rhoncus urna neque
-viverra justo nec ultrices dui sapien eget. Vestibulum sed arcu non odio
-euismod lacinia at quis risus.  
 
 \  
 
@@ -177,6 +151,11 @@ plot_globe <- function(mm,colors,cex,fov,rlon,rlat){
 
 # Module 1  
 
+- globe of all EEZs  
+- globe of Aus EEZs  
+- globe of Aus fishing impact  
+- globe of one of top 3 country fishing impact    
+
 ### All EEZ    
 
 ![](img/globe1.png)
@@ -202,13 +181,6 @@ plot_globe <- function(mm,colors,cex,fov,rlon,rlat){
 
 ![](img/globe4.png)
 
-\  
-
-
-Fleet size 2020  
-
-![](img/fleet_size_2020_.png)    
-
 
 \  
 
@@ -216,6 +188,8 @@ Fleet size 2020
 ----------------------------------------------------------------
 
 ## Module 2
+
+- case study from one of top 3 countries above. Can be multiple case studies (globe)   
 
 ### Case study  (animated full globe)   
 * follow vessel from one of top fishing nations above   
@@ -251,9 +225,32 @@ globejs(
 
 ```
 
+\  
+
+----------------------------------------------------------------
+
+## Module 3   
+
+\  
 
 
-### 10 years of fishing around Aus   
+- Top 3 countries fishing around Aus (either 2020 data or all data) EEZ (spotlight)      
+- all countries fishing around Aus EEZ (either 2020 data or all data) (spotlight)     
+- all countries fishing within Aus EEZ (either 2020 data or all data) (spotlight)       
+
+\  
+
+Fleet size 2020  
+
+![](img/fleet_size_2020_.png)
+
+### Top 3 countries fishing around Aus    
+![](img/globe6.png)    
+
+
+\  
+
+### All countries fishing around Aus (either 2020 data or all data)   
 * highlight how above case study is one of 1000s of vessels from many competing countries  
 * zoom into AUS EEZ after following case study    
 
@@ -261,16 +258,10 @@ globejs(
 
 ![](img/globe5.png)   
 
-\  
 
-### Top 3 nations fishing around Aus  
-![](img/globe6.png)  
 
 \  
 
-----------------------------------------------------------------
-
-## Module 3  
 
 ### All nations within Aus EEZ
 - This may be shifted above after the case study      
