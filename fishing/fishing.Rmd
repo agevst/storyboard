@@ -204,31 +204,23 @@ plot_globe <- function(mm,colors,cex,fov,rlon,rlat){
 
 \  
 
+
+Fleet size 2020  
+
+![](img/fleet_size_2020_.png)    
+
+
+\  
+
+
 ----------------------------------------------------------------
 
 ## Module 2
 
-### 10 years of fishing around Aus
-
-![](img/globe5.png)   
-
-\  
-
-### Top 3 nations fishing around Aus  
-
-![](img/globe6.png)  
+### Case study  (animated full globe)   
+* follow vessel from one of top fishing nations above   
 
 \  
-
-----------------------------------------------------------------
-
-## Module 3  
-
-### All nations within Aus EEZ
-
-![](img/globe7.png)
-
-### Lu Peng case study  (animated full globe)  
 ```{r, echo = F, fig.width=12, fig.height=12, warning=FALSE, message=FALSE}
 # module 3 ----------------------------------------------------------------
 
@@ -239,6 +231,7 @@ require(scales)
 require(dplyr)
 require(readr)
 
+earth <- here::here(params$here,"img","globe#6086AD1convert_colorise.png")
 
 fov = 30
 rlon = 84.5
@@ -260,9 +253,44 @@ globejs(
 
 
 
+### 10 years of fishing around Aus   
+* highlight how above case study is one of 1000s of vessels from many competing countries  
+* zoom into AUS EEZ after following case study    
+
+\         
+
+![](img/globe5.png)   
+
+\  
+
+### Top 3 nations fishing around Aus  
+![](img/globe6.png)  
+
+\  
+
+----------------------------------------------------------------
+
+## Module 3  
+
+### All nations within Aus EEZ
+- This may be shifted above after the case study      
+
+![](img/globe7.png)
+
+
+
+\  
+
+\  
 
 ------------------------------------------------------------------------
 
+#### Credits
+
+**DEVELOPER/3D VISUALISATION** Richard Lama, Nathanael Scott, Daniel
+Carter **PHOTOS** Francis Kokoroko **DATA** Matt Malishev **DESIGN**
+Mark Stehle, Luis Araujo, Kathleen Adele **VIDEO** Francis Kokoroko
+**PRODUCTION** Matthew Absalom-Wong **EDITORS** Nick Ralston, Lia Timson
 
 
 
